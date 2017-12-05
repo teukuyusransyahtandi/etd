@@ -13,8 +13,7 @@
       /* set default map height */
       var navbarH = $(".site-navbar").outerHeight();
       var footerH = $(".site-footer").outerHeight();
-      var menubarH = $(".site-menubar").outerHeight();
-      var mapH = $(window).height() - navbarH - footerH - menubarH;
+      var mapH = $(window).height() - navbarH - footerH;
 
       $(".page-main").outerHeight(mapH);
 

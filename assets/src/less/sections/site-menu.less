@@ -1,132 +1,93 @@
-.site-menu {
-  font-size: 0;
 
-  &-category {
-    display: none;
+.site-menu {
+  font-size: 14px;
+  overflow-y: hidden;
+  padding-bottom: 20px;
+
+  &-item > a {
+    white-space: nowrap;
+    cursor: pointer;
   }
 
   &-icon {
     display: inline-block;
-    margin-right: 4px;
 
     .icon-fixed-width();
   }
 
   &-title {
-    display: inline-block;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    vertical-align: bottom;
-    white-space: nowrap;
-    text-align: center;
+    vertical-align: middle;
+
+    .text-overflow();
   }
 
   &-arrow {
     font-family: '@{zmdi-font-name}';
+
     transition: transform 0.15s;
 
     .make-icon();
-
     &:before {
       content: '@{zmdi-var-chevron-right}';
     }
+  }
 
+  &-arrow, &-badge, &-label {
     position: absolute;
     right: @site-menu-padding-horizontal;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .badge, .label {
+    padding: 2px 5px 3px;
+    font-size: @font-size-small;
+    font-weight: @font-weight-normal;
   }
 
   &-item {
-    font-size: @site-menu-top-font-size;
+    position: relative;
+    white-space: nowrap;
 
-    > a {
+    a {
       display: block;
-      padding: 0 (@site-menu-padding-horizontal + 10px) 0 @site-menu-padding-horizontal;
-      line-height: @site-menu-sub-height;
+      color: @site-menubar-color;
     }
 
-    &.has-sub {
-      position: relative;
+    &.is-hidden {
+      opacity: 0;
     }
 
-    &:hover {
-      > .site-menu-sub {
-        display: block;
-      }
+    &.is-shown {
+      opacity: 1;
     }
   }
 
   > .site-menu-item {
-    display: inline-block;
+    padding: 0;
 
     > a {
-      display: block;
-      white-space: nowrap;
-      cursor: pointer;
-      padding: 13px 20px;
+      font-weight: @site-menu-top-weight;
+    }
 
-      > .site-menu {
-        &-icon {
-          display: block;
-          width: 100%;
-          line-height: 1;
-          font-size: 20px;
-          margin: 2px 0 4px
-        }
+    &.open {
+      background: @site-menu-top-open-bg;
 
-        &-title {
-          display: block;
-          line-height: 20px;
-        }
-
-        &-arrow {
-          display: none;
-        }
+      > a {
+        color: @site-menu-top-open-color;
+        background: @site-menu-top-open-head-bg;
       }
-    }
-  }
 
-  &-sub {
-    display: none;
-    background-color: @site-menubar-bg;
-    border: 1px solid @site-menu-has-sub-border-color;
-    position: absolute;
-    left: 0;
-    top: 100%;
-
-    @shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
-    box-shadow: @shadow;
-
-    ul& {
-      padding: 5px 0;
-    }
-
-    .site-menu {
-      &-item {
+      &.hover {
         > a {
-          width: 200px;
+          background: @site-menu-top-open-head-bg;
         }
       }
-
-      &-sub {
-        left: 100%;
-        top: 0;
-      }
-    }
-  }
-
-  //Status Color
-  &-item {
-    > a {
-      color: inherit;
-
-      &:hover {
-        color: @site-menu-top-hover-color;
-        background-color: @site-menu-top-hover-bg;
-      }
     }
 
-    &:hover {
+    &.hover, &:hover {
+      // color: @site-menu-top-hover-color;
+
       > a {
         color: @site-menu-top-hover-color;
         background-color: @site-menu-top-hover-bg;
@@ -134,9 +95,82 @@
     }
 
     &.active {
+      background: @site-menu-top-active-bg;
+
+      border-top: 1px solid @site-menu-top-active-border-color;
+      border-bottom: 1px solid @site-menu-top-active-border-color;
+
       > a {
         color: @site-menu-top-active-color;
-        background-color: @site-menu-sub-active-bg;
+        background: @site-menu-top-active-head-bg;
+      }
+
+      &.hover {
+        > a {
+          background: @site-menu-top-active-head-bg;
+        }
+      }
+    }
+  }
+
+  .site-menu-sub {
+    padding: 5px 0;
+    margin: 0;
+    font-size: 14px;
+    background: @site-menu-sub-bg;
+
+    .site-menu-item {
+      line-height: @site-menu-sub-height;
+      color: @site-menu-sub-color;
+      background: transparent;
+
+      &.has-sub {
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+
+        // &.open {
+        //   border-top-color: @site-menu-has-sub-border-color;
+        //   border-bottom-color: @site-menu-has-sub-border-color;
+        // }
+      }
+
+      > a {
+        padding: 0 @site-menu-padding-horizontal;
+      }
+
+      &.open {
+        background: @site-menu-sub-open-bg;
+
+        > a {
+          color: @site-menu-sub-open-color;
+        }
+
+        &.hover {
+          > a {
+            background-color: transparent;
+          }
+        }
+      }
+
+      &.hover, &:hover {
+        > a {
+          color: @site-menu-sub-hover-color;
+          background-color: @site-menu-sub-hover-bg;
+        }
+      }
+
+      &.active {
+        background: @site-menu-sub-active-bg;
+
+        > a {
+          color: @site-menu-sub-active-color;
+        }
+
+        &.hover {
+          > a {
+            background-color: transparent;
+          }
+        }
       }
     }
   }
@@ -145,219 +179,60 @@
 .site-menubar-dark {
   .site-menu {
     &-item {
-      > a {
-        color: inherit;
-
-        &:hover {
-          color: @site-menu-dark-top-hover-color;
-          background-color: @site-menu-dark-top-hover-bg;
+      a {
+        color: @site-menubar-dark-color;
+      }
+      &.hover, &:hover {
+        > a {
+          background: @site-menu-dark-top-open-head-bg;
+        }
+      }
+    }
+    > .site-menu-item {
+      &.open {
+        background: @site-menu-dark-top-open-bg;
+        > a {
+          color: @site-menu-dark-sub-open-color;
         }
       }
 
-      &:hover {
+      &.hover, &:hover {
+        background-color: @site-menu-dark-top-hover-bg;
         > a {
           color: @site-menu-dark-top-hover-color;
-          background-color: @site-menu-dark-top-hover-bg;
         }
       }
 
       &.active {
+        background: @site-menu-dark-top-active-bg;
         > a {
           color: @site-menu-dark-top-active-color;
-          background-color: @site-menu-dark-sub-active-bg;
         }
       }
     }
-
-    &-sub {
-      background-color: @site-menu-dark-top-active-bg;
-    }
-  }
-}
-
-@media screen and (max-width: @screen-xs-max) {
-  .site-menu {
-    &-category {
-      display: block;
-      font-size: 15px;
-      padding: 0 24px;
-      line-height: @site-menu-top-height;
-      text-transform: uppercase;
-      margin-top: 20px;
-    }
-
-    &-title {
-      max-width: 160px;
-
-      &:first-child {
-        margin-left: (2 * @site-menu-top-font-size);
-      }
-    }
-
-    &-item {
-      > a {
-        padding: 0 @site-menu-responsive-padding;
-        line-height: @site-menu-sub-height;
-      }
-
-      &.has-sub {
-        position: relative;
-      }
-
-      &:hover {
-        > .site-menu-sub {
-          display: none;
-        }
-      }
-
-      &.open {
-        > a {
-          .site-menu-arrow {
-            .transform(rotate(90deg));
-          }
-        }
-
-        > .site-menu-sub {
-          display: block;
-        }
-      }
-    }
-
-    > .site-menu-item {
-      display: block;
-
-      > a {
-        line-height: @site-menu-top-height;
-        padding: 0 @site-menu-responsive-padding;
-
-        > .site-menu {
-          &-icon {
-            display: inline-block;
-            width: auto;
-            line-height: inherit;
-            font-size: @site-menu-top-font-size;
-            margin-right: 14px;
-            margin-bottom: 0;
-          }
-
-          &-title {
-            display: inline-block;
-            line-height: inherit;
-          }
-
-          &-arrow {
-            display: inline-block;
-          }
-        }
-      }
-    }
-
-    &-sub {
-      display: none;
-      background-color: transparent;
-      border: none;
-      position: relative;
-      top: 0;
-
-      box-shadow: none;
-
-      ul& {
-        padding: 0;
-      }
-
-      .site-menu {
-        &-item {
-          > a {
-            width: auto;
-          }
-        }
-
-        &-sub {
-          left: 0;
-          top: 0;
-        }
-      }
-    }
-
-    //Status Color
-    &-item {
-      > a {
-        color: inherit;
-
-        &:hover {
-          color: @site-menu-top-hover-color;
-          background-color: @site-menu-top-hover-bg;
-        }
-      }
-
-      &.open {
-        background-color: @site-menu-sub-open-bg;
-
-        > a {
-          color: @site-menu-sub-open-color;
-          background-color: transparent;
-
-          &:hover {
-            background-color: transparent;
-          }
-        }
-      }
-
-      &.active {
-        > a {
-          color: @site-menu-top-active-color;
-          background-color: @site-menu-sub-active-bg;
-        }
-
+    .site-menu-sub {
+      .site-menu-item {
         &.open {
-          > a {
-            background-color: transparent;
-          }
-        }
-      }
-    }
-  }
-
-  .site-menubar-dark {
-    .site-menu {
-      &-sub {
-        background-color: transparent;
-      }
-
-      //Status Color
-      &-item {
-        > a {
-          color: inherit;
-
-          &:hover {
-            color: @site-menu-dark-top-hover-color;
-            background-color: @site-menu-dark-top-hover-bg;
-          }
-        }
-
-        &.open {
-          background-color: @site-menu-dark-sub-open-bg;
-
+          background: @site-menu-dark-sub-open-bg;
           > a {
             color: @site-menu-dark-sub-open-color;
-            background-color: transparent;
+          }
+        }
 
-            &:hover {
-              background-color: transparent;
-            }
+        &.hover, &:hover {
+          background-color: @site-menu-dark-sub-active-bg;
+          > a {
+            color: @site-menu-dark-sub-hover-color;
+          }
+          &.open {
+            background-color: @site-menu-dark-sub-open-bg;
           }
         }
 
         &.active {
+          background: @site-menu-dark-sub-active-bg;
           > a {
-            color: @site-menu-dark-top-active-color;
-            background-color: @site-menu-dark-sub-active-bg;
-          }
-
-          &.open {
-            > a {
-              background-color: transparent;
-            }
+            color: @site-menu-dark-sub-active-color;
           }
         }
       }

@@ -7,6 +7,9 @@
   height: 100%;
   padding: 0;
 }
+.page-code-editor .page-aside-inner {
+  height: 100%;
+}
 .page-code-editor .treeview .list-group-item.node-selected {
   background-color: #f5f5f5;
 }

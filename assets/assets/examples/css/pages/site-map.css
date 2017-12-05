@@ -50,9 +50,6 @@
 .sitemap-list-sub > li > a {
   padding-left: 80px;
 }
-.sitemap-list-sub .sitemap-list-sub > li > a {
-  padding-left: 120px;
-}
 @media (max-width: 480px) {
   .sitemap-list {
     padding-left: 40px;
@@ -96,9 +93,6 @@
     border: none;
   }
   .sitemap-list-sub > li > a {
-    padding: 0;
-  }
-  .sitemap-list-sub .sitemap-list-sub > li > a {
     padding: 0;
   }
 }

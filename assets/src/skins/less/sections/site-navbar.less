@@ -1,37 +1,35 @@
 
 .site-navbar {
-  .navbar-container {
-    background-color: transparent;
+  background-color: @site-navbar-header-bg;
 
-    @media (max-width: @screen-xs-max) {
-      background-color: @inverse;
+  .navbar-header {
+    background-color: transparent;
+    color: @site-navbar-header-color;
+
+    .navbar-toggle {
+      color: @site-navbar-header-color;
     }
+
+    .hamburger {
+      &:before,
+      &:after,
+      .hamburger-bar {
+        background-color: @site-navbar-header-color;
+      }
+    }
+
+    .navbar-brand {
+      color: @site-navbar-brand-color;
+    }
+  }
+
+  .navbar-container {
+    background-color: @inverse;
   }
 
   &.navbar-inverse {
-    .navbar-header {
-      .hamburger {
-        &:before,
-        &:after,
-        .hamburger-bar {
-          background-color: @site-navbar-header-color;
-        }
-      }
-    }
-
     .navbar-container {
       background-color: transparent;
-      @media (max-width: @screen-xs-max) {
-        background-color: @inverse;
-      }
-    }
-
-    @media (max-width: @screen-xs-max) {
-      .navbar-toolbar > li > a {
-        color: inherit;
-      }
     }
   }
 }
-
-

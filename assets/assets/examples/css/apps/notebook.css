@@ -126,23 +126,3 @@
     height:         calc(100% -  66px);
   }
 }
-@media screen and (min-width: 1600px) {
-  .app-notebook .page {
-    max-width: 1540px;
-  }
-}
-@media (min-width: 1200px) and (max-width: 1599px) {
-  .app-notebook .page {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .app-notebook .page {
-    max-width: 932px;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .app-notebook .page {
-    max-width: 708px;
-  }
-}

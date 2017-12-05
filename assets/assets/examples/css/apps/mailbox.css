@@ -178,32 +178,3 @@
     float: none;
   }
 }
-.app-mailbox .page {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-@media screen and (min-width: 1600px) {
-  .app-mailbox .page {
-    max-width: 1540px;
-  }
-}
-@media (min-width: 1200px) and (max-width: 1599px) {
-  .app-mailbox .page {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .app-mailbox .page {
-    max-width: 932px;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .app-mailbox .page {
-    max-width: 708px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .app-mailbox .page {
-    margin: 0;
-  }
-}

@@ -2,7 +2,7 @@
 
 .site-navbar-small {
   body& {
-    padding-top: (@navbar-small-height + @site-menubar-height);
+    padding-top: @navbar-small-height;
   }
 
   .site-navbar {
@@ -56,74 +56,41 @@
   }
 
   .site-menubar {
-    @top: @navbar-small-height;
-    top: @top;
+    top: @navbar-small-height;
+
+    @height: %(~"100% - %d", @navbar-small-height);
+    height: -webkit-calc(@height);
+    height: calc(@height);
   }
 
-  .site-skintools {
-    top: (@navbar-small-height + @site-menubar-height + 30px);
-  }
-
-  .slidePanel {
-    &.slidePanel-right, &.slidePanel-left {
-      top: (@navbar-small-height + @site-menubar-height);
-    }
+  .site-gridmenu {
+    top: @navbar-small-height;
   }
 }
 
-@media (max-width: @screen-xs-max) {
+@media (max-width: @grid-float-breakpoint-max) {
+  body.site-navbar-collapse-show.site-navbar-small {
+    padding-top: (2 * @navbar-small-height);
+  }
 
-  body.site-navbar-small {
-    padding-top: @navbar-small-height;
-
+  .site-navbar-small {
     .site-menubar {
-      @top: @navbar-small-height;
-      top: @top;
-
-      @height: %(~"100% - %d", @top);
-
-      height: -webkit-calc(@height);
-      height: calc(@height);
-    }
-
-    .page-aside {
       top: @navbar-small-height;
-    }
 
-    .site-skintools {
-      top: (@navbar-small-height + 30px);
-    }
-
-    .slidePanel {
-      &.slidePanel-right, &.slidePanel-left {
-        top: @navbar-small-height;
-      }
-    }    
-
-    &.site-navbar-collapse-show {
-      padding-top: (2 * @navbar-small-height);
-
-      .site-menubar {
+      .site-navbar-collapse-show & {
         top: (2*@navbar-small-height);
-
         @height: %(~"100% - %d", (2*@navbar-small-height));
         height: -webkit-calc(@height);
         height: calc(@height);
       }
+    }
 
-      .page-aside {
+    .page-aside {
+      top: @navbar-small-height;
+
+      .site-navbar-collapse-show & {
         top: (2 * @navbar-small-height);
       }
-
-      .site-skintools {
-        top: (2 * @navbar-small-height + 30px) ;
-      }
-
-      .slidePanel {
-        &.slidePanel-left, &.slidePanel-right {
-          top: (2 * @navbar-small-height);
-        }
-      }    
     }
   }
 }

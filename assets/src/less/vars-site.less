@@ -1,87 +1,101 @@
-//== Site Container
-//
-//##
-@site-container-width-xlg: 	@screen-xlg;
-@site-container-width-lg: 	@screen-lg;
-@site-container-width-md: 	@screen-md;
-@site-container-width-sm: 	@screen-sm;
+
 
 //== Site Navbar
 //
 //##
-@brand-width:				160px;
-@brand-font-family:        	@headings-font-family;
-@site-navbar-height:       	@navbar-height;
-@site-navbar-color:        	@gray;
-@site-navbar-hover-color:  	@gray-dark;
-@site-navbar-brand-bg:     	@gray-darkest;
+@brand-font-family:                     @headings-font-family;
+@site-navbar-height:                    @navbar-height;
+@site-navbar-color:                     @gray;
+@site-navbar-hover-color:               @gray-dark;
+@site-navbar-brand-bg:                  @gray-darkest;
 
-@site-navbar-header-bg:    	@color-blue-600;
-@site-navbar-header-color: 	@inverse;
+@site-navbar-header-bg:                 @brand-primary;
+@site-navbar-header-color:              @inverse;
 
-@site-navbar-brand-color:  	inherit;
+@site-navbar-brand-color:               @inverse;
 
-@navbar-brand-padding-horizontal: 20px;
+@site-navbar-header-toolbar-hover-color: @inverse;
+@site-navbar-header-toolbar-hover-bg:    transparent;
 
 //== Site Menubar
 //
 //##
 @site-menubar-bg:                   @inverse;
-@site-menubar-responsive-width:     260px;
+@site-menubar-unfold-width:         260px;
+@site-menubar-fold-width:           90px;
 
-@site-menubar-padding-horizontal:   10px;
+@site-menubar-padding-horizontal:   30px;
 
-@site-menubar-color:                fade(@gray-darker, 90%);
+@site-menubar-color:                fade(@text-color, 90%);
 @site-menubar-font-family:          @headings-font-family;
 @site-menubar-shadow:               0 2px 4px rgba(0, 0, 0, 0.08);
 
 @site-menubar-section-title-color:  @gray-dark;
 
-@site-menubar-footer-height:        65px;
+@site-menubar-footer-height:        76px;
 @site-menubar-footer-color:         @gray-dark;
-@site-menubar-footer-bg:            @gray-lighter;
 @site-menubar-footer-link-bg:       @gray-lighter;
 @site-menubar-footer-link-hover-bg: darken(@gray-lighter, 5%);
 
-@site-menubar-height: 			      	70px;
+
+//== Site Menubar Fold
+//
+//##
+@site-menubar-fold-nav-height: 60px;
+@site-menubar-fold-sub-bg:     @inverse;
+@site-menubar-fold-sub-width:  240px;
+@site-menubar-fold-divider-bg: darken(@site-menubar-bg, 1%);
+@site-menubar-fold-box-shadow: 1px 0px 2px rgba(0,0,0,.08);
+
+// Dark
+@site-menubar-dark-fold-sub-bg:     @gray-base;
+@site-menubar-dark-fold-divider-bg: fade(@color-blue-800, 5%);
+@site-menubar-dark-fold-box-shadow: 2px 1px 2px rgba(0,0,0,.08);
+
+//== Site Menubar Fold Alt
+//
+//##
+@site-menubar-fold-top-active-bg: @gray-darkest;
+
+// Dark
+@site-menubar-dark-fold-top-active-bg: fade(@gray-darkest, 90%);
+@site-menubar-dark-fold-alt-box-shadow: none;
 
 //== Site Menu
 //
 //##
+@site-menu-top-weight:              @font-weight-bold;
+@site-menu-top-hover-color:         @gray-darkest;
+@site-menu-top-hover-bg:            fade(@gray-base, 5%);
 
-@site-menu-top-hover-color:         @site-menubar-color;
-@site-menu-top-hover-bg:            fade(@color-primary-800, 4%);
-
+// @site-menu-top-active-head-bg:     @color-purple;
+// @site-menu-top-active-head-bg:     fade(@color-primary-600, 10%);
 @site-menu-top-active-head-bg:      transparent;
 @site-menu-top-active-bg:           @site-menu-top-hover-bg;
 @site-menu-top-active-border-color: rgba(0,0,0,.04);
-@site-menu-top-active-color:        fade(@color-primary-800, 90%);
+@site-menu-top-active-color:        @site-menu-top-hover-color;
 
 @site-menu-top-open-head-bg:        transparent;
-@site-menu-top-open-bg:             @site-menu-top-hover-bg;
+//@site-menu-top-open-bg:             transparent;
+@site-menu-top-open-bg:             @site-menu-top-active-bg;
 @site-menu-top-open-color:          @site-menu-top-active-color;
-@site-menu-top-height:              46px;
+@site-menu-top-height:              38px;
 @site-menu-top-font-size:           14px;
 
+@site-menu-sub-bg:                 transparent;
+@site-menu-sub-color:              @site-menubar-color;
+@site-menu-sub-hover-bg:           rgba(255, 255, 255, .02);
+@site-menu-sub-hover-color:        @site-menu-top-hover-color;
+@site-menu-sub-active-bg:          @site-menu-top-hover-bg;
+@site-menu-sub-active-color:       @site-menu-top-hover-color;
+@site-menu-sub-open-bg:            @site-menu-top-hover-bg;
+@site-menu-sub-open-color:         @site-menu-sub-active-color;
+@site-menu-sub-height:             36px;
 
-@site-menu-sub-bg:                 	transparent;
-@site-menu-sub-color:              	@site-menubar-color;
-@site-menu-sub-hover-bg:           	rgba(255, 255, 255, .02);
-@site-menu-sub-hover-color:        	@site-menu-sub-color;
-@site-menu-sub-active-bg:          	fade(@color-primary-800, 4%);
-@site-menu-sub-active-color:      	@site-menu-top-active-color;
-@site-menu-sub-open-bg:            	fade(@color-primary-800, 4%);
-@site-menu-sub-open-color:         	@site-menu-sub-active-color;
-@site-menu-sub-height:             	38px;
+@site-menu-category-color:         @gray-dark;
 
-@site-menu-category-color:         	@gray-dark;
-
-@site-menu-has-sub-border-color:   	@site-menu-top-hover-bg;
-@site-menu-padding-horizontal:      20px;
-
-@site-menu-section-header-border-color: rgba(0, 0, 0, .06);
-
-@site-menu-responsive-padding:	  	30px;
+@site-menu-has-sub-border-color:   rgba(0, 0, 0, .06);
+@site-menu-padding-horizontal:     @site-menubar-padding-horizontal;
 
 //== Site Menubar dark
 //
@@ -89,29 +103,36 @@
 @site-menubar-dark-color:                fade(@gray, 90%);
 @site-menubar-dark-bg:                   @gray-base;
 @site-menubar-dark-shadow:               @site-menubar-shadow;
-@site-menubar-dark-footer-link-bg:       rgb(33, 41, 46);
-@site-menubar-dark-footer-link-hover-bg: rgb(30, 36, 39);
+@site-menubar-dark-footer-link-bg:         rgb(33, 41, 46);
+@site-menubar-dark-footer-link-hover-bg:   rgb(30, 36, 39);
 
 //== Site Menu dark
 //
 //##
 @site-menu-dark-top-open-head-bg:      transparent;
 @site-menu-dark-top-hover-bg:          rgba(255, 255, 255, .02);
-@site-menu-dark-top-open-bg:           @site-menu-dark-top-active-bg;
 @site-menu-dark-top-active-bg:         darken(@site-menubar-dark-bg, 1%);
+@site-menu-dark-top-open-bg:           @site-menu-dark-top-active-bg;
 @site-menu-dark-sub-active-bg:         rgba(0, 0, 0, .06);
 @site-menu-dark-sub-open-bg:           @site-menu-dark-sub-active-bg;
-@site-menu-dark-has-sub-border-color:  rgba(0, 0, 0, .06);
+@site-menu-dark-has-sub-border-color:  @site-menu-dark-sub-active-bg;
 
-@site-menu-dark-sub-color:				@site-menubar-dark-color;
 @site-menu-dark-top-hover-color:       fade(@inverse, 80%);
 @site-menu-dark-top-active-color:      @inverse;
 @site-menu-dark-sub-active-color:      @inverse;
-@site-menu-dark-sub-open-color:        @site-menu-dark-top-active-color;
+@site-menu-dark-sub-open-color:        @site-menu-dark-sub-active-color;
 @site-menu-dark-sub-hover-color:       @site-menu-dark-top-hover-color;
 
-@site-menu-dark-section-header-border-color: rgba(0, 0, 0, .06);
 
+//== Site Grid Menu
+//
+//##
+@site-gridmenu-color:          @gray;
+@site-gridmenu-hover-color:    @inverse;
+@site-gridmenu-bg:             @gray-base;
+@site-gridmenu-hover-bg:       fade(@inverse, 2%);
+
+@site-gridmenu-toggle-size:    @font-size-base;
 
 //== Site Sidebar
 //
@@ -154,13 +175,11 @@
 //== Site Footer
 //
 //##
-@site-footer-vertical-padding: 		10px;
-@site-footer-horizontal-padding: 	@page-horizontal-padding;
-@site-footer-bg:               		@inverse;
-@site-footer-divider-color:    		@gray-lighter;
-@site-footer-height:           		44px;
-@site-footer-xs-height: 			66px;
-@site-footer-shadow: 				inset 0 0 @site-footer-height rgba(0, 0, 0, .02);
+@site-footer-vertical-padding: 	10px;
+@site-footer-bg:               	rgba(0,0,0,.02);
+@site-footer-divider-color:    	@gray-lighter;
+@site-footer-height:           	44px;
+@site-footer-xs-height: 		66px;
 
 //== Layout Boxed
 //

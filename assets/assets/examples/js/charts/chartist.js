@@ -121,32 +121,13 @@
         name: 'Golden section',
         data: [1, 1.618, 2.618, 4.236, 6.854, 11.09]
       }]
+    }, {
+      plugins: [
+        Chartist.plugins.tooltip()
+      ]
     });
 
     var $ctTooltipsChart = $('#exampleTooltipsLine');
-
-    var $ctTooltip = $ctTooltipsChart
-      .append('<div class="ct-tooltip"></div>')
-      .find('#exampletooltip')
-      .hide();
-
-    $ctTooltipsChart.on('mouseenter', '#examplepoint', function() {
-      var $point = $(this),
-        value = $point.attr('ct:value'),
-        seriesName = $point.parent().attr('ct:series-name');
-      $ctTooltip.html(seriesName + '<br>' + value).show();
-    });
-
-    $ctTooltipsChart.on('mouseleave', '#examplepoint', function() {
-      $ctTooltip.hide();
-    });
-
-    $ctTooltipsChart.on('mousemove', function(event) {
-      $ctTooltip.css({
-        left: (event.offsetX || event.originalEvent.layerX) - $ctTooltip.width() / 2 - 10,
-        top: (event.offsetY || event.originalEvent.layerY) - $ctTooltip.height() - 40
-      });
-    });
   })();
 
   // Example Chartist Line Chart With Area
@@ -457,7 +438,7 @@
         data.group.append(new Chartist.Svg('circle', {
           cx: data.x2,
           cy: data.y2,
-          r: Math.abs(data.value) * 2 + 5
+          r: Math.abs(Chartist.getMultiValue(data.value)) * 2 + 5
         }, 'ct-slice-pie'));
       }
     });

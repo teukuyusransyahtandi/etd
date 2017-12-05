@@ -4,7 +4,7 @@
 .app-media .page-content-actions .actions-inner {
   border-bottom: 1px solid #e0e0e0;
 }
-.app-media .page-content-actions .btn-outline.btn-default {
+.app-media .page-content-actions .btn-default {
   z-index: 2;
 }
 .app-media .blocks {
@@ -231,34 +231,5 @@
     display: block;
     float: none;
     margin-top: 20px;
-  }
-}
-.app-media .page {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-@media screen and (min-width: 1600px) {
-  .app-media .page {
-    max-width: 1540px;
-  }
-}
-@media (min-width: 1200px) and (max-width: 1599px) {
-  .app-media .page {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .app-media .page {
-    max-width: 932px;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .app-media .page {
-    max-width: 708px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .app-media .page {
-    margin: 0;
   }
 }

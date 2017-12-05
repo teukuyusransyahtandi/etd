@@ -31,7 +31,7 @@ title: Form Advanced Elements
 
 
   {{#content "js_vendor" mode="append"}}
-    <script src="{{global}}/vendor/select2/select2.min.js"></script>
+    <script src="{{global}}/vendor/select2/select2.full.min.js"></script>
     <script src="{{global}}/vendor/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
     <script src="{{global}}/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
     <script src="{{global}}/vendor/bootstrap-select/bootstrap-select.js"></script>
@@ -43,7 +43,7 @@ title: Form Advanced Elements
     <script src="{{global}}/vendor/ascolor/jquery-asColor.min.js"></script>
     <script src="{{global}}/vendor/asgradient/jquery-asGradient.min.js"></script>
     <script src="{{global}}/vendor/ascolorpicker/jquery-asColorPicker.min.js"></script>
-    <script src="{{global}}/vendor/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+    <script src="{{global}}/vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
     <script src="{{global}}/vendor/jquery-knob/jquery.knob.js"></script>
     <script src="{{global}}/vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
     <script src="{{global}}/vendor/card/jquery.card.js"></script>
@@ -280,6 +280,7 @@ title: Form Advanced Elements
                   <div class="example">
                     <select class="form-control" data-plugin="select2" data-placeholder="Select a State"
                     data-allow-clear="true">
+                      <option></option>
                       <optgroup label="Alaskan/Hawaiian Time Zone">
                         <option value="AK">Alaska</option>
                         <option value="HI">Hawaii</option>

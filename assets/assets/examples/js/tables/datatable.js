@@ -18,7 +18,7 @@
   (function() {
     var offsetTop = 0;
     if ($('.site-navbar').length > 0) {
-      offsetTop = $('.site-navbar').eq(0).innerHeight() + $('.site-menubar').eq(0).innerHeight();
+      offsetTop = $('.site-navbar').eq(0).innerHeight();
     }
 
     // initialize datatable

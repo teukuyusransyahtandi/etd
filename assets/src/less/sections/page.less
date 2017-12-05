@@ -3,13 +3,8 @@ body {
 }
 
 .page {
-  // @padding: %(~"calc((100% - %d) / 2 )", @site-container-width-lg);
-  // padding-left: @padding !important;
-  // padding-right: @padding !important;
-
-  // max-width: @site-container-width-lg;
+  max-width: @page-centered-max-width;
   margin: 0 auto;
-
   // transition: all .5s;
   background: @page-bg;
   position: relative;
@@ -183,21 +178,5 @@ body {
         }
       }
     }
-  }
-}
-
-
-.page {
-  @media screen and (min-width: @screen-xlg) {
-    max-width: @site-container-width-xlg;
-  }
-  @media (min-width: @screen-lg) and (max-width: @screen-lg-max) {
-    max-width: @site-container-width-lg;
-  }
-  @media (min-width: @screen-md) and (max-width: @screen-md-max) {
-    max-width: @site-container-width-md;
-  }
-  @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
-    max-width: @site-container-width-sm;
   }
 }
