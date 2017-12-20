@@ -53,7 +53,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           $data['lihat'] = $this->M_Admin->profil($id);
           $data['prodi'] = $this->M_Prodi->lihat();
           $data['bidang_minat'] = $this->M_Bidang_Minat->lihat();
-         	$this->load->view('edit_profil',$data);
+         	//$this->load->view('edit_profil',$data);
+          $data['content']  = 'home/edit_profil';
+          $this->load->view('home/index', $data);
       }
       public function ubah_password(){
           $id=$_GET ['id'];

@@ -30,7 +30,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               $prodi=$this->session->userdata('prodi');
               $data['bidang_minat'] = $this->M_Bidang_Minat->lihat_prodi($prodi);
               $data['dosen'] = $this->M_Dosen->lihat();
-           		$this->load->view('Upload',$data);
+           		//$this->load->view('Upload',$data);
+              
+              $data['content']  = 'home/upload';
+              $this->load->view('home/index', $data);
           }
        	}
 

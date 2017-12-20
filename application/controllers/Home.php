@@ -27,11 +27,29 @@ class Home extends CI_Controller {
     $this->load->view('Prodi',$data);
   }
 
-  public function new()
+  public function baru()
   {
     $data['judul100'] = $this->M_Judul->judul100();
     $data['prodi']    = $this->M_Prodi->lihat();
     $data['content']  = 'home/new';
+    $this->load->view('home/index', $data);
+  }
+
+  public function populer()
+  {
+    $data['content']  = 'home/populer';
+    $this->load->view('home/index', $data);
+  }
+
+  public function help()
+  {
+    $data['content']  = 'home/help';
+    $this->load->view('home/index', $data);
+  }
+
+  public function setting()
+  {
+    $data['content']  = 'home/setting';
     $this->load->view('home/index', $data);
   }
 

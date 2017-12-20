@@ -30,19 +30,21 @@
             </a>
           </li>
           <li class="dropdown dropdown-fw dropdown-mega">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
+            <a class="dropdown-toggle" href="<?= base_url() ?>" aria-expanded="false"
             data-animation="fade" role="button">Home</a>
           </li>
           <li class="dropdown dropdown-fw dropdown-mega">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
+            <a class="dropdown-toggle" href="<?= base_url('populer') ?>" aria-expanded="false"
             data-animation="fade" role="button">Populer</a>
           </li>
+          <?php if ($this->session->userdata('login')): ?>
+            <li class="dropdown dropdown-fw dropdown-mega">
+              <a class="dropdown-toggle" href="<?= base_url('upload') ?>" aria-expanded="false"
+              data-animation="fade" role="button">Upload</a>
+            </li>
+          <?php endif ?>
           <li class="dropdown dropdown-fw dropdown-mega">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
-            data-animation="fade" role="button">Upload</a>
-          </li>
-          <li class="dropdown dropdown-fw dropdown-mega">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
+            <a class="dropdown-toggle" href="<?= base_url('help') ?>" aria-expanded="false"
             data-animation="fade" role="button">Help</a>
           </li>
         </ul>
@@ -65,27 +67,34 @@
               </li>
             </ul>
           </li>
-          <li class="dropdown">
-            <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
-            data-animation="scale-up" role="button">
-              <span class="avatar avatar-online">
-                <img src="<?= base_url('assets/') ?>global/portraits/5.jpg" alt="...">
-                <i></i>
-              </span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li role="presentation">
-                <a href="javascript:void(0)" role="menuitem"><i class="icon md-account" aria-hidden="true"></i> Profile</a>
-              </li>
-              <li role="presentation">
-                <a href="javascript:void(0)" role="menuitem"><i class="icon md-settings" aria-hidden="true"></i> Settings</a>
-              </li>
-              <li class="divider" role="presentation"></li>
-              <li role="presentation">
-                <a href="javascript:void(0)" role="menuitem"><i class="icon md-power" aria-hidden="true"></i> Logout</a>
-              </li>
-            </ul>
-          </li>
+          <?php if ($this->session->userdata('login')): ?>
+            <li class="dropdown">
+              <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
+              data-animation="scale-up" role="button">
+                <span class="avatar avatar-online">
+                  <img src="<?= base_url('assets/') ?>global/portraits/5.jpg" alt="...">
+                  <i></i>
+                </span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="presentation">
+                  <a href="<?= base_url(); ?>ubah_profil?id=<?= $this->session->userdata('login') ?>" role="menuitem"><i class="icon md-account" aria-hidden="true"></i> Profile</a>
+                </li>
+                <li role="presentation">
+                  <a href="<?= base_url('setting'); ?>" role="menuitem"><i class="icon md-settings" aria-hidden="true"></i> Settings</a>
+                </li>
+                <li class="divider" role="presentation"></li>
+                <li role="presentation">
+                  <a href="<?php echo site_url(); ?>logout" role="menuitem"><i class="icon md-power" aria-hidden="true"></i> Logout</a>
+                </li>
+              </ul>
+            </li>
+          <?php else: ?>
+            <li class="dropdown dropdown-fw dropdown-mega">
+              <a class="dropdown-toggle" href="<?= site_url(); ?>login" aria-expanded="false"
+              data-animation="fade" role="button">Login</a>
+            </li>
+          <?php endif ?>
         </ul>
         <!-- End Navbar Toolbar Right -->
       </div>

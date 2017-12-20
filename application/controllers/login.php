@@ -38,7 +38,9 @@ class Login extends CI_Controller {
 
 		 redirect("home");
 		}
-		$this->load->view('login');
+
+		$data['content']  = 'home/login';
+    	$this->load->view('home/index', $data);
 	}
 
 	public function logout() {
@@ -47,7 +49,7 @@ class Login extends CI_Controller {
 		$this->session->unset_userdata('prodi');
 		$this->session->unset_userdata('mhs');
 		$this->session->sess_destroy();
-		redirect('login');
+		redirect('home');
 	}
 
   public function register() {
