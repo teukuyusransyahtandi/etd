@@ -20,6 +20,10 @@
   <link rel="stylesheet" href="<?= base_url('assets/') ?>global/vendor/waves/waves.css">
   <link rel="stylesheet" href="<?= base_url('assets/') ?>global/vendor/jvectormap/jquery-jvectormap.css">
   <link rel="stylesheet" href="<?= base_url('assets/') ?>assets/examples/css/dashboard/v1.css">
+  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/datatables-bootstrap/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/datatables-fixedheader/dataTables.fixedHeader.css">
+  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/global/vendor/datatables-responsive/dataTables.responsive.css">
+  <link rel="stylesheet" href="<?php echo site_url(); ?>assets/assets/examples/css/tables/datatable.css">
   <!-- Fonts -->
   <link rel="stylesheet" href="<?= base_url('assets/') ?>global/fonts/material-design/material-design.min.css">
   <link rel="stylesheet" href="<?= base_url('assets/') ?>global/fonts/brand-icons/brand-icons.min.css">

@@ -41,7 +41,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          $data['ta'] = $this->M_Judul->detail_judul($id);
          $data['dosen'] = $this->M_Judul->dosen($id);
 
-         $this->load->view('detail_judul',$data);
+         //$this->load->view('detail_judul',$data);
+         $data['content']  = 'home/detail_judul';
+         $this->load->view('home/index', $data);
        }
 
        public function detail_judul_admin()

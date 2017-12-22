@@ -29,14 +29,23 @@ class Home extends CI_Controller {
 
   public function baru()
   {
-    $data['judul100'] = $this->M_Judul->judul100();
-    $data['prodi']    = $this->M_Prodi->lihat();
-    $data['content']  = 'home/new';
-    $this->load->view('home/index', $data);
+    if ($this->session->userdata('level') == 0) {
+      $data['judul100'] = $this->M_Judul->judul100();
+      $data['prodi']    = $this->M_Prodi->lihat();
+      $data['content']  = 'home/new';
+      $this->load->view('home/index', $data);
+      
+    }else{
+      $data['judul100'] = $this->M_Judul->judul100();
+      $data['prodi']    = $this->M_Prodi->lihat();
+      $this->load->view('Home',$data);
+    }
   }
 
   public function populer()
   {
+    $data['judul100'] = $this->M_Judul->judul100();
+    $data['prodi']    = $this->M_Prodi->lihat();
     $data['content']  = 'home/populer';
     $this->load->view('home/index', $data);
   }

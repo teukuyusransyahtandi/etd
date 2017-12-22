@@ -101,3 +101,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['populer'] = 'Home/populer';
 $route['help']    = 'Home/help';
 $route['setting'] = 'Home/setting';
+
+$route['admin/home'] = 'Home';

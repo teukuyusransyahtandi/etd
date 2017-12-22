@@ -23,12 +23,15 @@
               <span class="sr-only">Toggle fullscreen</span>
             </a>
           </li>
-          <li class="hidden-float">
-            <a class="icon md-search" data-toggle="collapse" href="#" data-target="#site-navbar-search"
-            role="button">
-              <span class="sr-only">Toggle Search</span>
-            </a>
-          </li>
+          <?php if ($_SERVER['REQUEST_URI'] != '/etd/'): ?>
+            
+            <li class="hidden-float">
+              <a class="icon md-search" data-toggle="collapse" href="#" data-target="#site-navbar-search"
+              role="button">
+                <span class="sr-only">Toggle Search</span>
+              </a>
+            </li>
+          <?php endif ?>
           <li class="dropdown dropdown-fw dropdown-mega">
             <a class="dropdown-toggle" href="<?= base_url() ?>" aria-expanded="false"
             data-animation="fade" role="button">Home</a>

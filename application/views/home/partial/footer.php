@@ -22,6 +22,11 @@
   <script src="<?= base_url('assets/') ?>global/vendor/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
   <script src="<?= base_url('assets/') ?>global/vendor/matchheight/jquery.matchHeight-min.js"></script>
   <script src="<?= base_url('assets/') ?>global/vendor/peity/jquery.peity.min.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables/jquery.dataTables.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-fixedheader/dataTables.fixedHeader.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-bootstrap/dataTables.bootstrap.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/vendor/datatables-responsive/dataTables.responsive.js"></script>
+  <script src=".<?php echo site_url(); ?>assets/global/vendor/datatables-tabletools/dataTables.tableTools.js"></script>
   <!-- Scripts -->
   <script src="<?= base_url('assets/') ?>global/js/core.js"></script>
   <script src="<?= base_url('assets/') ?>assets/js/site.js"></script>
@@ -40,3 +45,5 @@
   <script src="<?= base_url('assets/') ?>global/js/components/jvectormap.js"></script>
   <script src="<?= base_url('assets/') ?>global/js/components/peity.js"></script>
   <script src="<?= base_url('assets/') ?>assets/examples/js/dashboard/v1.js"></script>
+  <script src="<?php echo site_url(); ?>assets/global/js/components/datatables.js"></script>
+  <script src="<?php echo site_url(); ?>assets/assets/examples/js/tables/datatable.js"></script>

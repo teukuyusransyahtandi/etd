@@ -119,10 +119,9 @@
         <ul class="site-menu">
           <li class="site-menu-category ">General</li>
           <li class="site-menu-item has-sub <?php $link=uri_string(); if($link =="home"){ echo "active";} ?>">
-            <a href="<?php echo site_url(); ?>home"  data-dropdown-toggle="false">
+            <a href="<?php echo site_url(); ?>admin/home"  data-dropdown-toggle="false">
               <i class="site-menu-icon icon md-library" aria-hidden="true"></i>
               <span class="site-menu-title">Beranda</span>
-              <span class="site-menu-arrow"></span>
             </a>
 
           </li>
